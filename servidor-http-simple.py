@@ -1,10 +1,9 @@
-#!/usr/bin/python
-
+#!/usr/bin/python3
 """
 Simple HTTP Server
 Jesus M. Gonzalez-Barahona and Gregorio Robles
 {jgb, grex} @ gsyc.es
-TSAI, SAT and SARO subjects (Universidad Rey Juan Carlos)
+SAT and SARO subjects (Universidad Rey Juan Carlos)
 """
 
 import socket
@@ -26,11 +25,11 @@ mySocket.listen(5)
 #  (in an infinite loop)
 
 while True:
-    print 'Waiting for connections'
+    print('Waiting for connections')
     (recvSocket, address) = mySocket.accept()
-    print 'HTTP request received:'
-    print recvSocket.recv(1024)
-    recvSocket.send("HTTP/1.1 200 OK\r\n\r\n" +
-                    "<html><body><h1>Hello World!</h1></body></html>" +
-                    "\r\n")
+    print('HTTP request received:')
+    print(recvSocket.recv(1024))
+    recvSocket.send(b"HTTP/1.1 200 OK\r\n\r\n" +
+                    b"<html><body><h1>Hello World!</h1></body></html>" +
+                    b"\r\n")
     recvSocket.close()
