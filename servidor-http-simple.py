@@ -22,7 +22,7 @@ mySocket.bind(('localhost', 1234))
 mySocket.listen(5)
 
 # Accept connections, read incoming data, and answer back an HTML page
-#  (in an infinite loop)
+#  (in an infinite loop) - Loop can only be stopped with ctrl+Z
 
 while True:
     print('Waiting for connections')
@@ -33,5 +33,3 @@ while True:
                     b"<html><body><h1>Hello World!</h1></body></html>" +
                     b"\r\n")
     recvSocket.close()
-# Prueba
-# Prueba 2
