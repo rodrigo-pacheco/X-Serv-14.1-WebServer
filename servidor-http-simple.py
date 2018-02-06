@@ -28,7 +28,7 @@ while True:
     print('Waiting for connections')
     (recvSocket, address) = mySocket.accept()
     print('HTTP request received:')
-    print(recvSocket.recv(1024))
+    print(recvSocket.recv(1024))    # Buffer size
     recvSocket.send(b"HTTP/1.1 200 OK\r\n\r\n" +
                     b"<html><body><h1>Hello World!</h1></body></html>" +
                     b"\r\n")
