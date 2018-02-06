@@ -35,7 +35,7 @@ try:
         print(recvSocket.recv(2048))
         print('Answering back...')
         recvSocket.send(b"HTTP/1.1 200 OK\r\n\r\n" +
-                        b"<html><body><h1>Hello World!</h1>" +
+                        b"<html><body><h1>Rosu te quiero \n Pedro programmer <3</h1>" +
                         b"<p>And in particular hello to you, " +
                         bytes(address[0], 'utf-8') +
                         b"</p>" +
@@ -45,3 +45,6 @@ try:
 except KeyboardInterrupt:
     print("Closing binded socket")
     mySocket.close()
+
+
+# Otras etiquetas <a> <p>
