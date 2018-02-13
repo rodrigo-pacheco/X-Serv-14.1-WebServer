@@ -3,7 +3,6 @@
 Simple HTTP Server version 2: reuses the port, so it can be
 restarted right after it has been killed. Accepts connects from
 the outside world, by binding to the primary interface of the host.
-
 Jesus M. Gonzalez-Barahona and Gregorio Robles
 {jgb, grex} @ gsyc.es
 SAT and SARO subjects (Universidad Rey Juan Carlos)
@@ -35,7 +34,7 @@ try:
         print(recvSocket.recv(2048))
         print('Answering back...')
         recvSocket.send(b"HTTP/1.1 200 OK\r\n\r\n" +
-                        b"<html><body><h1>Rosu te quiero \n Pedro programmer <3</h1>" +
+                        b"<html><body><h1>Hello World!</h1>" +
                         b"<p>And in particular hello to you, " +
                         bytes(address[0], 'utf-8') +
                         b"</p>" +
@@ -44,7 +43,4 @@ try:
         recvSocket.close()
 except KeyboardInterrupt:
     print("Closing binded socket")
-    mySocket.close()
-
-
-# Otras etiquetas <a> <p>
+mySocket.close()
